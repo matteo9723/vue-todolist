@@ -20,20 +20,22 @@
       <div class="box">
         <h4 v-if='verifica'>inserire almeno 3 caratteri</h4>
         <input
-         v-model='Input' 
+         v-model='input' 
          @keyup.enter='insertValue()'
          type="text" 
          placeholder="cosa devi fare?"
         >
 
         <ul >
-          <li v-for='(valore,index) in lista' class="to_do"   @click='disattivi=index' 
-          >
-            <span :class="{'fatto' : index == disattivi}" >{{valore}}</span> 
+          <li v-for='(valore,index) in lista' class="to_do"  >
+
+            <span @click='active(index)' :class="{check: disattivi.includes(index)}" >{{lista[index]}}</span>
+
             <i
               @click='remove(index)'
               class="fas fa-trash-alt">
             </i>
+
           </li>
         </ul>
        
