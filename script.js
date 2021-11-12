@@ -25,7 +25,7 @@ const app = new Vue ({
 
       if(this.input.length > 3){
         this.lista.push(this.input);
-        this.Input='';
+        this.input='';
       }else{
         this.verifica=true;
         setTimeout(()=>{
